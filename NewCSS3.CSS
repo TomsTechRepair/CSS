@@ -1,0 +1,155 @@
+.head { 
+  height: 20%;
+  overflow: visible;
+  background: #4C4C4C;
+  color: #fff;
+  position: relative;
+  vertical-align: middle;
+  z-index: 1;
+}
+.head:after {
+  background: inherit;
+  bottom: 0;
+  content: '';
+  display: block;
+  height: 100%;
+  left: 0;
+  position: absolute;
+  right: 0;
+  transform: skewY(-2deg);
+  transform-origin: 100%;
+  z-index: -1;
+}
+
+/* header */
+
+.head ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  background-color: #4C4C4C;
+}
+
+.head li a {
+  display: block;
+  padding: 20px 20px;
+  text-decoration: none;
+  text-align: center; 
+  color: #fff;
+}
+
+.head li a:hover,
+.header .menu-btn:hover {
+  background-color: #fff;
+  color: #4C4C4C;
+}
+
+.head .logo {
+  display: block;
+  color: #fff;
+  float: left;
+  font-size: 2em;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+/* menu */
+
+.head .menu {
+  clear: both;
+  max-height: 0;
+  transition: max-height .2s ease-out;
+}
+
+/* menu icon */
+
+.head .menu-icon {
+  cursor: pointer;
+  display: inline-block;
+  float: right;
+  padding: 28px 20px;
+  position: relative;
+  user-select: none;
+}
+
+.head .menu-icon .navicon {
+  background: #fff;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: background .2s ease-out;
+  width: 18px;
+}
+
+.head .menu-icon .navicon:before,
+.head .menu-icon .navicon:after {
+  background: #fff;
+  content: '';
+  display: block;
+  height: 100%;
+  position: absolute;
+  transition: all .2s ease-out;
+  width: 100%;
+}
+
+.head .menu-icon .navicon:before {
+  top: 5px;
+}
+
+.head .menu-icon .navicon:after {
+  top: -5px;
+}
+
+/* menu btn */
+
+.head .menu-btn {
+  display: none;
+}
+
+.head .menu-btn:checked ~ .menu {
+  max-height: 500px;
+}
+
+.head .menu-btn:checked ~ .menu-icon .navicon {
+  background: transparent;
+}
+
+.head .menu-btn:checked ~ .menu-icon .navicon:before {
+  transform: rotate(-45deg);
+}
+
+.head .menu-btn:checked ~ .menu-icon .navicon:after {
+  transform: rotate(45deg);
+}
+
+.head .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+.head .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+  top: 0;
+}
+
+/* 48em = 768px */
+
+@media (min-width: 48em) {
+  .head li {
+    float: left;
+  }
+.head {
+  height: 20%;
+  background: #4C4C4C;
+  color: #fff;
+}
+
+
+  .head li a {
+    padding: 20px 30px;
+  }
+  .head .menu {
+    clear: none;
+    float: right;
+    max-height: none;
+  }
+  .head .menu-icon {
+    display: none;
+  }
+}
